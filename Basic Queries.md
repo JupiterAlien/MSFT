@@ -1,3 +1,20 @@
+## Hunting for clicks in URLs
+
+
+       let domains =  pack_array("suspicious.domain.here", "suspicious.domain.here", "suspicious.domain.here");
+       DeviceNetworkEvents
+       | where Timestamp > ago(15d)
+       | where RemoteUrl in~ (domains)
+       | distinct Timestamp, DeviceName, InitiatingProcessAccountName, InitiatingProcessAccountUpn, InitiatingProcessParentFileName, RemoteUrl
+       | sort by Timestamp desc
+
+
+       UrlClickEvents
+       | where Timestamp > ago(15d)
+       |where Url contains "123matka" or UrlChain contains "123matka"
+       |summarize count(RemoteUrl) by Timestamp, DeviceName, RemoteUrl
+
+
 ## Hunting for suspicious Inbox Rules    
 
     let startTime = ago(30d);
