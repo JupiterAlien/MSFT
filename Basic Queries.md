@@ -11,8 +11,8 @@
 
        UrlClickEvents
        | where Timestamp > ago(15d)
-       |where Url contains "123matka" or UrlChain contains "123matka"
-       |summarize count(RemoteUrl) by Timestamp, DeviceName, RemoteUrl
+       | where Url contains "123matka" or UrlChain contains "123matka"
+       | summarize count(RemoteUrl) by Timestamp, DeviceName, RemoteUrl
 
 
 ## Hunting for suspicious Inbox Rules    
