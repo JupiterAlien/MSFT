@@ -15,7 +15,7 @@
  
  Change the hash type according to your necessity / IOC. 
  
-    let fileHash = "paste the here";
+    let fileHash = "paste hash here";
     find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
     where SHA256 == fileHash or InitiatingProcessSHA256 == fileHash
     project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
