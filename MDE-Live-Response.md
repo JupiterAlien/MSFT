@@ -3,7 +3,7 @@
 
 
 
-| Command  | Description  | Windows and Windows Server  | macOS  | Linux  |
+| Command  | Description  | Windows and Windows Server  | MacOS  | Linux  |
 |---|---|---|---|---|
 | cd  | Changes the current directory.  | Y  | Y  | Y  |
 | cls  | Clears the console screen.  | Y  | Y  | Y  |
@@ -14,7 +14,7 @@
 | fg `<command ID>`  | Place the specified job in the foreground, making it the current job.  NOTE: fg takes a 'command ID` available from jobs, not a PID  | Y  | Y  | Y  |
 | fileinfo  | Get information about a file.  | Y  | Y  | Y  |
 | findfile  | Locates files by a given name on the device.  | Y  | Y  | Y  |
-| getfile <file_path>  | Downloads a file.  | Y  | Y  | Y  |
+| getfile 'file_path_here'  | Downloads a file.  | Y  | Y  | Y  |
 | help  | Provides help information for live response commands.  | Y  | Y  | Y  |
 | jobs  | Shows currently running jobs, their ID and status.  | Y  | Y  | Y  |
 | persistence  | Shows all known persistence methods on the device.  | Y  | N  | N  |
