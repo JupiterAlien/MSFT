@@ -1,6 +1,10 @@
 
+# Live response gives Security Operations Teams instantaneous access to a device (also referred to as a machine) using a remote shell connection. This gives you the power to do in-depth investigative work and take immediate response actions to promptly contain identified threats in real time.
 
+All the commands here stated are part of Microsoft's official documentation. 
+https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/live-response?view=o365-worldwide
 
+Also, the powershell script on the library are quite useful to obtain more results. 
 
 
 | Command  | Description  | Windows and Windows Server  | MacOS  | Linux  |
