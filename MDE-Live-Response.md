@@ -4,8 +4,25 @@
 All the commands here stated are part of Microsoft's official documentation. 
 https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/live-response?view=o365-worldwide
 
-Also, the powershell script on the library are quite useful to obtain more results. 
+Also, the powershell scripts on the library are quite useful to obtain more results. You can upload a script to the library
 
+#### Put a file in the library
+
+Live response has a library where you can put files into. The library stores files (such as scripts) that can be run in a live response session at the tenant level.
+Live response allows PowerShell scripts to run, however you must first put the files into the library before you can run them.
+You can have a collection of PowerShell scripts that can run on devices that you initiate live response sessions with.
+
+#### To upload a file in the library
+
+- Click Upload file to library.
+- Click Browse and select the file.
+- Provide a brief description.
+- Specify if you'd like to overwrite a file with the same name.
+- If you'd like to be, know what parameters are needed for the script, select the script parameters check box. In the text field, enter an example and a description.
+- Click Confirm.
+- (Optional) To verify that the file was uploaded to the library, run the library command.
+
+### Commands list
 
 | Command  | Description  | Windows and Windows Server  | MacOS  | Linux  |
 |---|---|---|---|---|
