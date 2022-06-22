@@ -4,7 +4,7 @@
 All the commands here stated are part of Microsoft's official documentation. 
 https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/live-response?view=o365-worldwide
 
-Also, the powershell scripts on the library are quite useful to obtain more results. You can upload a script to the library
+Also, the powershell scripts on the library are quite useful to obtain more results. You can upload a script to the library.
 
 #### Put a file in the library
 
