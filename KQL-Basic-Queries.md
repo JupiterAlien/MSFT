@@ -1,3 +1,14 @@
+## Advanced Hunting consuming external reliable data (using OrangeCyberDefender repo as an example)
+
+
+       let RussianIOCIP= externaldata(IPAddress:string)[@"https://raw.githubusercontent.com/Orange-Cyberdefense/russia-ukraine_IOCs/main/OCD-Datalake-russia-                  ukraine_IOCs-IP.txt"] with (format="txt");
+       RussianIOCIP
+       | join kind=inner DeviceNetworkEvents on $left.IPAddress == $right.RemoteIP
+       | join kind=inner (DeviceInfo | distinct DeviceId, PublicIP) on DeviceId
+       | where RemoteIP =~"RussianIOCIP"
+       | project Timestamp, DeviceName,LocalIP,PublicIP, LocalPort, RemoteIP, RemotePort, ActionType, InitiatingProcessFileName, InitiatingProcessFolderPath,                  InitiatingProcessCommandLine, ReportId,InitiatingProcessSHA256
+
+
 ## Hunting for clicks in URLs
 
 
