@@ -41,12 +41,24 @@
  
 ## Hunting for hash-related activity
  
- Change the hash type according to your necessity / IOC. 
+
  
-    let fileHash = "paste hash here";
-    find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
-    where SHA256 == fileHash or InitiatingProcessSHA256 == fileHash
-    project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
+       find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
+       where SHA256 in~("SHA256s_HERE","SEPARATED_BY_COMAS") 
+       or InitiatingProcessSHA256 in~("SHA256s_HERE","SEPARATED_BY_COMAS")
+       project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
+
+
+       find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
+       where SHA1 in~("SHA1s_HERE","SEPARATED_BY_COMAS") 
+       or InitiatingProcessSHA1 in~("SHA1s_HERE","SEPARATED_BY_COMAS")
+       project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
+
+
+       find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
+       where MD5 in~("MD5s_HERE","SEPARATED_BY_COMAS") 
+       or InitiatingProcessMD5 in~("MD5s_HERE","SEPARATED_BY_COMAS")
+       project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
   
  
 ## Hunting for domain-related actvity
