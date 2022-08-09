@@ -42,18 +42,21 @@
 ## Hunting for hash-related activity
  
 
+SHA256:
  
        find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
        where SHA256 in~("SHA256s_HERE","SEPARATED_BY_COMAS") 
        or InitiatingProcessSHA256 in~("SHA256s_HERE","SEPARATED_BY_COMAS")
        project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
 
+SHA1:
 
        find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
        where SHA1 in~("SHA1s_HERE","SEPARATED_BY_COMAS") 
        or InitiatingProcessSHA1 in~("SHA1s_HERE","SEPARATED_BY_COMAS")
        project Timestamp, DeviceName, LocalIP, ActionType, FileName, InitiatingProcessFileName, ProcessCommandLine, RemoteUrl, RemoteIP, SHA256, SHA1, MD5
 
+MD5:
 
        find in (DeviceFileEvents, DeviceProcessEvents, DeviceEvents, DeviceRegistryEvents, DeviceNetworkEvents, DeviceImageLoadEvents)
        where MD5 in~("MD5s_HERE","SEPARATED_BY_COMAS") 
