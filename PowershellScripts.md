@@ -2,9 +2,9 @@
 ## PowerShell script to clear Chrome's cache and cookies. 
 
 
-> Write-Output "| ---------------------------------------- |"
-> Write-Output "| Clearing Google Chrome Cache and Cookies |"
-> Write-Output "| ---------------------------------------- |"
+Write-Output "| ---------------------------------------- |"
+Write-Output "| Clearing Google Chrome Cache and Cookies |"
+Write-Output "| ---------------------------------------- |"
 
 try
 {
