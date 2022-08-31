@@ -1,9 +1,9 @@
-## Andrés Hidalgo.
-## PowerShell script to clear Chrome's cache and cookies. 
+## PowerShell script to clear Chrome's cache and cookies
+## Andrés Hidalgo
 
 
     Write-Output "| ---------------------------------------- |"
-    Write-Output "| Clearing Google Chrome Cache and Cookies |"
+    Write-Output "| Clearing Google Chrome's Cache and Cookies |"
     Write-Output "| ---------------------------------------- |"
 
     try
@@ -32,5 +32,14 @@
     Write-Output "| --------- |"
 
 
-----
+-----------
+
+
+## Andrés Hidalgo.
+## PowerShell script to remove Chrome's extensions based on its ID.
+
+
+
+
+
 
