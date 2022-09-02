@@ -22,8 +22,12 @@
 
        UrlClickEvents
        | where Timestamp > ago(15d)
-       | where Url contains "123matka" or UrlChain contains "123matka"
+       | where Url contains "maliciousURL" or UrlChain contains "maliciousURL"
        | summarize count(RemoteUrl) by Timestamp, DeviceName, RemoteUrl
+
+       UrlClickEvents
+       | where Url contains "maliciousURL"
+       | Timestamp, ActionType, AccountUpn, Url, IsClickedThrough, ThreatTypes 
 
 
 ## Hunting for suspicious Inbox Rules    
@@ -85,6 +89,16 @@ MD5:
     | project DeviceName, LocalIP, LocalPort, ActionType, Timestamp, RemoteUrl, Protocol, RemoteIP, RemotePort
 
 
+## Hunting for USB mount events
+
+    DeviceEvents
+    | where Timestamp > ago(30d)
+    | where ActionType == "UsbDriveMounted"
+    | where DeviceName == "Machine name here"
+    | where InitiatingProcessAccountName == "username"
+    | extend DriveLetter = tostring(todynamic(AdditionalFields).DriveLetter)  
+    | extend ProductName = tostring(todynamic(AdditionalFields).ProductName)
+    | project Timestamp, DeviceName, DriveLetter, ProductName, InitiatingProcessAccountName, FileName, FolderPath
 
 
 
